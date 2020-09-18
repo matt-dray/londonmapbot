@@ -10,16 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@master
-      - name: Install packages
-        run: Rscript -e 'install.packages("rtweet", dependencies = TRUE)'
-      - name: Set token
-        run: Rscript -e 'my_token <- rtweet::create_token(app = "londonmapbot", consumer_key = "${{ secrets.TWITTER_CONSUMER_API_KEY }}", consumer_secret = "${{ secrets.TWITTER_CONSUMER_API_SECRET }}", access_token = "${{ secrets.TWITTER_ACCESS_TOKEN }}", access_secret = "${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}")'
-      - name: Create latlon
-        run: Rscript -e 'lat <- round(runif(1, -0.5, 0.27), 4); lon <- round(runif(1, 51.3, 51.7), 4)'
-      - name: Create image URL
-        run: Rscript -e 'img_url <- paste0("https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/", paste0(lat, ",", lon), ",15,0/600x400@2x?access_token=", "MAPBOX_PUBLIC_ACCESS_TOKEN")'
-      - name: Download image
-        run: Rscript -e 'temp_file <- tempfile(); download.file(img_url, temp_file)'
-      - name: Post tweet
-        run: Rscript -e 'rtweet::post_tweet(status = paste0(lat, ", ", lon), media = temp_file)'
+      - name: Generate and post tweet
+        run: |
+          Rscript -e 'install.packages("rtweet", dependencies = TRUE)'
+          Rscript -e 'my_token <- rtweet::create_token(app = "londonmapbot", consumer_key = "${{ secrets.TWITTER_CONSUMER_API_KEY }}", consumer_secret = "${{ secrets.TWITTER_CONSUMER_API_SECRET }}", access_token = "${{ secrets.TWITTER_ACCESS_TOKEN }}", access_secret = "${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}")'
+          Rscript -e 'lat <- round(runif(1, -0.5, 0.27), 4); lon <- round(runif(1, 51.3, 51.7), 4)'
+          Rscript -e 'img_url <- paste0("https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/", paste0(lat, ",", lon), ",15,0/600x400@2x?access_token=", "MAPBOX_PUBLIC_ACCESS_TOKEN")'
+          Rscript -e 'temp_file <- tempfile(); download.file(img_url, temp_file)'
+          Rscript -e 'rtweet::post_tweet(status = paste0(lat, ", ", lon), media = temp_file)'
       
