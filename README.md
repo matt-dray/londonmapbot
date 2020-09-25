@@ -11,7 +11,7 @@ Repo for the Twitter bot [@londonmapbot](https://www.twitter.com/londonmapbot). 
 
 On schedule, a [GitHub Action](https://github.com/features/actions) queries the [the Mapbox API](https://docs.mapbox.com/api/maps/#static-images) for a satellite image of random co-ordinates in London and then posts it to Twitter using [{rtweet}](https://docs.ropensci.org/rtweet/).
 
-See [the rOpenSci {rtweet} use-case page](https://discuss.ropensci.org/c/usecases/10).
+See [the blog post](https://www.rostrum.blog/2020/09/21/londonmapbot/) and [the rOpenSci {rtweet} use-case page](https://discuss.ropensci.org/c/usecases/10).
 
 Posted images are copyright of Mapbox/OpenStreetMap/Maxar. This information is embedded in every image.
 
