@@ -1,15 +1,15 @@
 # Create Twitter token
 londonmapbot_token <- rtweet::create_token(
   app = "londonmapbot",
-  consumer_key = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
+  consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
   consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-  access_token = Sys.getenv("TWITTER_ACCESS_TOKEN"),
-  access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+  access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
+  access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
 
 # Generate random coordinates within specific limits
 lon <- round(runif(1, -0.489, 0.236), 4)
-lon <- format(lon, scientific = FALSE) # stop 0.0001 converting to 1e-04
+lon <- format(lon, scientific = FALSE)
 lat <- round(runif(1, 51.28, 51.686), 4)
 
 # Build URL and fetch image from Mapbox API
@@ -26,7 +26,7 @@ download.file(img_url, temp_file)
 
 # Post the image to Twitter with the latlon as text
 rtweet::post_tweet(
-  status = paste0(lat, ", ", lon),
+  status = paste0("https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/"),
   media = temp_file,
   token = londonmapbot_token
 )
