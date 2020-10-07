@@ -11,28 +11,29 @@ Repo for the Twitter bot [@londonmapbot](https://www.twitter.com/londonmapbot). 
 
 # What
 
-This repo contains a [GitHub Action](https://github.com/features/actions) that runs on schedule (:00 and :30 past each hour). It contains R code that queries [the Mapbox API](https://docs.mapbox.com/api/maps/#static-images) for a satellite image of random co-ordinates in a bounding box around Greater London. It then posts the image to [@londonmapbot](https://www.twitter.com/londonmapbot) on Twitter using [{rtweet}](https://docs.ropensci.org/rtweet/), along with a URL to that location on [OpenStreetMap](https://www.openstreetmap.org/).
+This repo contains a [GitHub Action](https://github.com/features/actions) that runs on schedule (:00 and :30 past each hour). It executes R code that queries [the Mapbox API](https://docs.mapbox.com/api/maps/#static-images) for a satellite image of random co-ordinates in a bounding box roughly around Greater London and within the M25 motorway. The image is posted to [@londonmapbot](https://www.twitter.com/londonmapbot) on Twitter using [{rtweet}](https://docs.ropensci.org/rtweet/), along with a URL to that location on [OpenStreetMap](https://www.openstreetmap.org/).
 
-See [the blog post](https://www.rostrum.blog/2020/09/21/londonmapbot/) and [the rOpenSci {rtweet} use-case page](https://discuss.ropensci.org/c/usecases/10).
+See [the blog post](https://www.rostrum.blog/2020/09/21/londonmapbot/) and [the rOpenSci {rtweet} use-case page](https://discuss.ropensci.org/t/a-twitter-bot-with-rtweet-mapbox-and-github-actions/2223).
 
 # The mapbotverse
 
 ## Others
 
 * [@canberramapbot](https://twitter.com/canberramapbot) by [@rexarski](https://twitter.com/rexarski)
+* [@narrowbotR](https://twitter.com/narrowbotR) by [@mattkerlogue](https://twitter.com/mattkerlogue)
 
 ## How to
 
 See [the accompanying blog post](https://www.rostrum.blog/2020/09/21/londonmapbot/) for details, but in short:
 
-1. Create a Twitter account with the handle in the form 'locationmapbot'
+1. Create a Twitter account for your bot
 1. Sign up for developer status with [Twitter](https://developer.twitter.com/en/apply-for-access) and [MapBox](https://www.mapbox.com/)
 1. Fork this repo (or just copy the code into a new repo)
-1. Get your API keys from MapBox and Twitter and add them as secrets to your GitHub repo
+1. Get your API keys from MapBox and Twitter and add them as [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) to your repo
 1. Edit the `lat` and `lon` variables in the `londonmapbot-tweet.R` file to provide a bounding box around your location to sample coordinates from
 1. Adjust the `.github/workflows/londonmapbot.yml` file to adjust [the cron schedule](https://crontab.guru/#0,30_*_*_*_*) if you want
-1. GitHub Actions will recognise the .yml file and post to Twitter on the defined schedule
+1. GitHub Actions will recognise the .yml file and execute the code on schedule
 
-# Credits
+# Image credits
 
 Posted images are copyright of Mapbox/OpenStreetMap/Maxar. This information is embedded in every image.
