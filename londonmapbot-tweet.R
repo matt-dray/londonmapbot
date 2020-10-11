@@ -24,9 +24,15 @@ img_url <- paste0(
 temp_file <- tempfile()
 download.file(img_url, temp_file)
 
-# Post the image to Twitter with the latlon as text
+# Build the status message (text and URL)
+latlon_details <- paste0(
+  lat, ", ", lon, "\n",
+  "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/"
+)
+
+# Post the image to Twitter
 rtweet::post_tweet(
-  status = paste0("https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/"),
+  status = latlon_details,
   media = temp_file,
   token = londonmapbot_token
 )
