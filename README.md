@@ -24,6 +24,8 @@ See also the:
 
 Other bots that have taken inspiration from londonmapbot:
 
+* [@chicagomapbot](https://twitter.com/chicagomapbot) by [@geodataleo](https://twitter.com/geodataleo)
+* [@texturesofut](https://twitter.com/texturesofut) by [@jaco_bel](https://twitter.com/jaco_bel)
 * [@vambot2](https://twitter.com/vambot2) by [@DEJPett](https://twitter.com/DEJPett)
 * [@italiancomuni](https://twitter.com/italiancomuni) by [@espinielli](https://twitter.com/DEJPett)
 * [@BotAtlanta](https://twitter.com/BotAtlanta) by [@jaycromwell12](https://twitter.com/jaycromwell12)
