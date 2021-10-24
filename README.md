@@ -12,7 +12,7 @@ Source for the Twitter bot [@londonmapbot](https://www.twitter.com/londonmapbot)
 
 # What
 
-This repo contains a [GitHub Action](https://github.com/features/actions) that runs on schedule (currently every two hours). It executes R code that queries [the Mapbox API](https://docs.mapbox.com/api/maps/#static-images) for a satellite image of random co-ordinates in a bounding box roughly around Greater London and within the M25 motorway. The image is posted to [@londonmapbot](https://www.twitter.com/londonmapbot) on Twitter using [{rtweet}](https://docs.ropensci.org/rtweet/), along with a URL for that location on [OpenStreetMap](https://www.openstreetmap.org/).
+This repo contains a [GitHub Action](https://github.com/features/actions) that runs on schedule (currently every half-hour). It executes R code that queries [the Mapbox API](https://docs.mapbox.com/api/maps/#static-images) for a satellite image of random co-ordinates in a bounding box roughly around Greater London and within the M25 motorway. The image is posted to [@londonmapbot](https://www.twitter.com/londonmapbot) on Twitter using [{rtweet}](https://docs.ropensci.org/rtweet/), along with a URL for that location on [OpenStreetMap](https://www.openstreetmap.org/).
 
 See also the:
 
@@ -25,6 +25,7 @@ See also the:
 Other bots that have taken inspiration from londonmapbot:
 
 * [@chicagomapbot](https://twitter.com/chicagomapbot) by [@geodataleo](https://twitter.com/geodataleo)
+* [@esmapbot](https://twitter.com/esmapbot) by [@progra_mapa](https://twitter.com/progra_mapa)
 * [@texturesofut](https://twitter.com/texturesofut) by [@jaco_bel](https://twitter.com/jaco_bel)
 * [@vambot2](https://twitter.com/vambot2) by [@DEJPett](https://twitter.com/DEJPett)
 * [@italiancomuni](https://twitter.com/italiancomuni) by [@espinielli](https://twitter.com/DEJPett)
