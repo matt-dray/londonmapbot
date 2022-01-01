@@ -18,21 +18,25 @@ See also the:
 
 * [blog post](https://www.rostrum.blog/2020/09/21/londonmapbot/)
 * [BotWiki page](https://botwiki.org/bot/londonmapbot/)
-* [the rOpenSci {rtweet} use-case page](https://discuss.ropensci.org/t/a-twitter-bot-with-rtweet-mapbox-and-github-actions/2223).
+* [the rOpenSci {rtweet} use-case page](https://discuss.ropensci.org/t/a-twitter-bot-with-rtweet-mapbox-and-github-actions/2223)
 
-## The 'mapbotverse'
+<details><summary>Click for 'the mapbotverse' (other bots that have taken inspiration from londonmapbot)</summary><p>
 
-Other bots that have taken inspiration from londonmapbot:
-
+* [@BotAtlanta](https://twitter.com/BotAtlanta) by [@jaycromwell12](https://twitter.com/jaycromwell12)
+* [@BotKrakow](https://twitter.com/BotKrakow) by [@dziennikarz](https://twitter.com/warszawabot)
+* [@canberramapbot](https://twitter.com/canberramapbot) by [@rexarski](https://twitter.com/rexarski)
 * [@chicagomapbot](https://twitter.com/chicagomapbot) by [@geodataleo](https://twitter.com/geodataleo)
+* [@coastalwalkr](https://twitter.com/coastalwalkr) by [@mattkerlogue](https://twitter.com/mattkerlogue)
 * [@esmapbot](https://twitter.com/esmapbot) by [@progra_mapa](https://twitter.com/progra_mapa)
+* [@immunityunity](https://github.com/codecreative/immunityunity) by [@byron_m](https://twitter.com/byron_m)
+* [@italiancomuni](https://twitter.com/italiancomuni) by [@espinielli](https://twitter.com/DEJPett)
+* [@narrowbotR](https://twitter.com/narrowbotR) by [@mattkerlogue](https://twitter.com/mattkerlogue)
+* [@portugalmapbot](https://twitter.com/portugalmapbot) by [@joaompalmeiro](https://twitter.com/joaompalmeiro)
 * [@texturesofut](https://twitter.com/texturesofut) by [@jaco_bel](https://twitter.com/jaco_bel)
 * [@vambot2](https://twitter.com/vambot2) by [@DEJPett](https://twitter.com/DEJPett)
-* [@italiancomuni](https://twitter.com/italiancomuni) by [@espinielli](https://twitter.com/DEJPett)
-* [@BotAtlanta](https://twitter.com/BotAtlanta) by [@jaycromwell12](https://twitter.com/jaycromwell12)
-* [@narrowbotR](https://twitter.com/narrowbotR) by [@mattkerlogue](https://twitter.com/mattkerlogue)
-* [@canberramapbot](https://twitter.com/canberramapbot) by [@rexarski](https://twitter.com/rexarski)
-
+* [@warszawabot](https://twitter.com/warszawabot) by [@dziennikarz](https://twitter.com/warszawabot)
+</details><p>
+  
 ## Quick how to
 
 See [the accompanying blog post](https://www.rostrum.blog/2020/09/21/londonmapbot/) for details, but in short:
