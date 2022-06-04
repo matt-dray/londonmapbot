@@ -19,7 +19,7 @@ See also:
 * my [original blog post](https://www.rostrum.blog/2020/09/21/londonmapbot/) that introduces the bot
 * [a Twitter List](https://twitter.com/i/lists/1492559073287581707) with >20 bots inspired by londonmapbot
   
-You can make your own bot. See the links above for details, but in brief:
+You can make your own bot. See the links above for details, or [this excellent introduction by Oscar Baruffa](https://oscarbaruffa.com/twitterbot/), but in brief:
 
 1. Create a Twitter account for your bot
 1. Sign up for developer status with [Twitter](https://developer.twitter.com/en/apply-for-access) (including ['elevated access'](https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api)) and [MapBox](https://www.mapbox.com/)
