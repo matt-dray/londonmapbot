@@ -6,15 +6,6 @@ londonmapbot_token <- rtweet::rtweet_bot(
   access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
 
-# Deprecated method prior to {rtweet} v1.o
-# londonmapbot_token <- rtweet::create_token(
-#   app = "londonmapbot",
-#   consumer_key    = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
-#   consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-#   access_token    = Sys.getenv("TWITTER_ACCESS_TOKEN"),
-#   access_secret   = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
-# )
-
 # Generate random coordinates within specific limits
 lon <- round(runif(1, -0.489, 0.236), 4)
 lon <- format(lon, scientific = FALSE)
@@ -38,7 +29,7 @@ latlon_details <- paste0(
   "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/"
 )
 
-# Provide alt-text description (required in {rtweet} versions >1.0)
+# Provide alt-text description
 alt_text <- paste(
   "A satellite image of a random location in Greater London,",
   "provided by MapBox. Typically contains a residential or",
