@@ -1,11 +1,19 @@
 # Create Twitter token
-londonmapbot_token <- rtweet::create_token(
-  app = "londonmapbot",
-  consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
-  consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-  access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
-  access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+londonmapbot_token <- rtweet::rtweet_bot(
+  api_key       = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
+  api_secret    = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
+  access_token  = Sys.getenv("TWITTER_ACCESS_TOKEN"),
+  access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
+
+# Deprecated method prior to {rtweet} v1.o
+# londonmapbot_token <- rtweet::create_token(
+#   app = "londonmapbot",
+#   consumer_key    = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
+#   consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
+#   access_token    = Sys.getenv("TWITTER_ACCESS_TOKEN"),
+#   access_secret   = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+# )
 
 # Generate random coordinates within specific limits
 lon <- round(runif(1, -0.489, 0.236), 4)
@@ -30,7 +38,7 @@ latlon_details <- paste0(
   "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/"
 )
 
-# Provide alt-text description
+# Provide alt-text description (required in {rtweet} versions >1.0)
 alt_text <- paste(
   "A satellite image of a random location in Greater London,",
   "provided by MapBox. Typically contains a residential or",
@@ -39,8 +47,8 @@ alt_text <- paste(
 
 # Post the image to Twitter
 rtweet::post_tweet(
-  status = latlon_details,
-  media = temp_file,
+  status         = latlon_details,
+  media          = temp_file,
   media_alt_text = alt_text,
-  token = londonmapbot_token
+  token          = londonmapbot_token
 )
