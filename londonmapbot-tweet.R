@@ -30,9 +30,17 @@ latlon_details <- paste0(
   "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/"
 )
 
+# Provide alt-text description
+alt_text <- paste(
+  "A satellite image of a random location in Greater London,",
+  "provided by MapBox. Typically contains a residential or",
+  "industrial area, some fields or a golf course."
+)
+
 # Post the image to Twitter
 rtweet::post_tweet(
   status = latlon_details,
   media = temp_file,
+  media_alt_text = alt_text,
   token = londonmapbot_token
 )
