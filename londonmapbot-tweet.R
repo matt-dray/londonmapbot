@@ -29,7 +29,7 @@ img_url <- paste0(
 )
 
 # Download the image to a temporary location
-temp_file <- tempfile()
+temp_file <- tempfile(fileext = ".jpeg")
 download.file(img_url, temp_file)
 
 # Build the status message (text and URL)
