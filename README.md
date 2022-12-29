@@ -28,3 +28,5 @@ You can make your own bot. See the links above for details, or [this excellent i
 1. Adjust the `.github/workflows/londonmapbot.yml` file to adjust [the cron schedule](https://crontab.guru/#0,30_*_*_*_*) if you want
 1. GitHub Actions will recognise the .yml file and execute the code on the schedule provided
 1. Mark the account [as an automated account](https://help.twitter.com/en/using-twitter/automated-account-labels)
+
+You can also adjust this workflow to post to Mastodon. See [Matt Kerlogue's blog post](https://lapsedgeographer.london/2022-11/mastodon-switch/) for more information.
