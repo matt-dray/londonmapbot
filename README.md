@@ -14,7 +14,7 @@ Source for the Mastodon bot [@londonmapbot@botsin.space](https://www.twitter.com
 
 This repo contains a [GitHub Action](https://github.com/features/actions) that runs on schedule (currently twice per day). It executes R code that queries [the Mapbox API](https://docs.mapbox.com/api/maps/#static-images) for a satellite image (copyright Mapbox/OpenStreetMap/Maxar) of random co-ordinates from a bounding box that covers Greater London. The image and a URL for that location on [OpenStreetMap](https://www.openstreetmap.org/) are posted to Mastodon using [{rtoot}](https://schochastics.github.io/rtoot) and to Twitter using [{rtweet}](https://docs.ropensci.org/rtweet/).
 
-Note that the Twitter functionality of this bot is expected to fail from 2023-02-09, which is when the API will no longer have a free-access tier.
+Note that the Twitter functionality of this bot is expected to fail from 2023-02-09, which is [when the API will no longer have a free-access tier](https://twitter.com/TwitterDev/status/1621026986784337922).
 
 ## How
 
