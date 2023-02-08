@@ -3,7 +3,14 @@
 
 # Set tokens for interacting with APIs (stored as GitHub secrets)
 
-mastodon_token <- Sys.getenv("RTOOT_DEFAULT_TOKEN")
+mastodon_token <- structure(
+  list(
+    bearer = Sys.getenv("RTOOT_DEFAULT_TOKEN"),
+    type = "user",
+    instance = "botsin.space"
+  ),
+  class = "rtoot_bearer"
+)
 
 twitter_token <- rtweet::rtweet_bot(
   api_key       = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
