@@ -3,6 +3,13 @@
 
 # Set tokens for interacting with APIs (stored as GitHub secrets)
 
+twitter_token <- rtweet::rtweet_bot(
+  api_key       = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
+  api_secret    = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
+  access_token  = Sys.getenv("TWITTER_ACCESS_TOKEN"),
+  access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+)
+
 mastodon_token <- structure(
   list(
     bearer = Sys.getenv("RTOOT_DEFAULT_TOKEN"),
@@ -10,13 +17,6 @@ mastodon_token <- structure(
     instance = "botsin.space"
   ),
   class = "rtoot_bearer"
-)
-
-twitter_token <- rtweet::rtweet_bot(
-  api_key       = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
-  api_secret    = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-  access_token  = Sys.getenv("TWITTER_ACCESS_TOKEN"),
-  access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
 
 mapbox_token <- Sys.getenv("MAPBOX_PUBLIC_ACCESS_TOKEN")
@@ -48,14 +48,6 @@ alt_text <- paste(
   "industrial area, some fields or a golf course."
 )
 
-# Post the image to Mastodon
-rtoot::post_toot(
-  status   = latlon_details,
-  media    = temp_file,
-  alt_text = alt_text,
-  token    = mastodon_token
-)
-
 # Post the image to Twitter (expected to fail in Feb 2023)
 
 possibly_post_tweet <- purrr::possibly(rtweet::post_tweet)  # will fail silently
@@ -67,4 +59,10 @@ possibly_post_tweet(
   token          = twitter_token
 )
 
-
+# Post the image to Mastodon
+rtoot::post_toot(
+  status   = latlon_details,
+  media    = temp_file,
+  alt_text = alt_text,
+  token    = mastodon_token
+)
