@@ -1,14 +1,7 @@
-# Post an image via the Mastodon and Twitter APIs
-# Matt Dray, Updated Feb 2023
+# Post an image via the Mastodon API
+# Matt Dray, updated May 2023 (removed code to post to Twitter)
 
 # Set tokens for interacting with APIs (stored as GitHub secrets)
-
-twitter_token <- rtweet::rtweet_bot(
-  api_key       = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
-  api_secret    = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-  access_token  = Sys.getenv("TWITTER_ACCESS_TOKEN"),
-  access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
-)
 
 mastodon_token <- structure(
   list(
@@ -48,18 +41,10 @@ alt_text <- paste(
   "industrial area, some fields or a golf course."
 )
 
-# Post the image to Twitter (expected to fail in Feb 2023)
+# Post to Mastodon
 
-possibly_post_tweet <- purrr::possibly(rtweet::post_tweet)  # will fail silently
+possibly_post_tweet <- purrr::possibly(rtoot::post_toot)  # will fail silently
 
-possibly_post_tweet(
-  status         = latlon_details,
-  media          = temp_file,
-  media_alt_text = alt_text,
-  token          = twitter_token
-)
-
-# Post the image to Mastodon
 rtoot::post_toot(
   status   = latlon_details,
   media    = temp_file,
