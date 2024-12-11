@@ -12,7 +12,7 @@ Source for the Mastodon bot [@londonmapbot@botsin.space](https://botsin.space/@l
 1. Choose a random spot in a bounding box that encloses Greater London.
 2. Query [the Mapbox API](https://docs.mapbox.com/api/maps/#static-images) for a satellite image of that location.
 3. Generate an [OpenStreetMap](https://www.openstreetmap.org/) URL for that location.
-4. Post the image and URL to Mastodon using [{rtoot}](https://schochastics.github.io/rtoot).
+4. Post the image and URL to Mastodon using [{rtoot}](https://gesistsa.github.io/rtoot).
 
 The bot was built originally for Twitter as [@londonmapbot](https://www.twitter.com/londonmapbot) using the [{rtweet}](https://docs.ropensci.org/rtweet/) package. Posts to Twitter stopped in May 2023 due to changes in the API terms of service. You can [see an older version of the repo](https://github.com/matt-dray/londonmapbot/tree/65aa64722c475fc9bda274c49674cd66ff695b4b) from before the Twitter-related code was removed.
 
