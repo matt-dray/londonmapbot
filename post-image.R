@@ -1,7 +1,9 @@
-# Post an image via the Mastodon API
-# Matt Dray, updated May 2023 (removed code to post to Twitter)
+# Generate an image via MapBox API, post it via the Mastodon API
+# Matt Dray, updated May 2023 (converted from Twitter to Mastodon)
 
-# Set tokens for interacting with APIs (stored as GitHub secrets)
+# To run locally, ensure you add a .Renviron file with your RTOOT_DEFAULT_TOKEN
+# and MAPBOX_PUBLIC_ACCESS_TOKEN. Add these as GitHub Secrets to your repo if
+# you want to make use of the GitHub Action.
 
 mastodon_token <- structure(
   list(
